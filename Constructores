@@ -1,0 +1,112 @@
+# Operaciones2
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calculadora;
+
+/**
+ *
+ * @author EPIS
+ */
+public class Operaciones {
+    // atributos
+    protected double nrol;
+    protected double nro2;
+    // propiedades
+    public double getNro1()
+    {
+        return this.nrol;   
+    }
+    public double getNro2()
+    {   
+       return this.nro2;
+    }    
+    public void setNro1(double nro1)
+    {   
+        this.nrol = nro1;
+    }    
+    public void setNro2(double nro2)
+    {
+        this.nro2 = nro2;
+    } 
+    
+    // 1.- Constructot sin sobrecarga de parametros
+    public Operaciones()
+    {}
+    // 2.- Constructor con sobrecarga de parametros
+    public Operaciones(double nro1, double nro2)
+    {
+        this.nrol = nro1;
+        this.nro2 = nro2;
+    }      
+    // Implementacion de Metodos u Operaciones
+    public double Sumar()
+    {       
+        return this.nrol + this.nro2;
+    }
+    public double Restar()
+    {
+        return this.nrol - this.nro2;
+    }
+    public double Multiplicar()
+    {
+        return this.nrol * this.nro2;
+    }
+    
+    public String Dividir()
+    {
+        if (this.nro2==0){
+            return "Error: Division entre 0";
+        }
+        else
+        {
+            double divide = this.nrol / this.nro2;
+            return String.valueOf(divide);
+        } 
+    }
+    
+    public double Potencia()
+    {
+        double Pot = 1;
+        for (int i = 1; i <= this.nro2; i++) {
+            Pot *= this.nrol;
+        }
+        return Pot;
+    }
+    
+    private double Fact(double nro)
+    {
+        if(nro==0) {
+            return 1;
+        }
+        else
+            return nro * Fact(nro-1);
+    }
+    
+    public double Factorial()
+    {
+       return Fact(this.nrol);
+    }
+    
+    public double Raiz()
+    {
+        return Math.sqrt(this.nrol);
+    }
+    
+    public double Seno()
+    {
+        return Math.sin(Math.toRadians(this.nrol));
+    }
+    
+    public double Coseno()
+    {
+        return Math.cos(Math.toRadians(this.nrol));
+    }
+    public double Tangente()
+    {
+        return Math.tan(Math.toRadians(this.nrol));
+    }
+}
+
